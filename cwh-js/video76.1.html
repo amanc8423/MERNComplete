@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+     class RailwayForm{
+        submit(){alert("form submission")};
+//When you define a method in a class, you don't need to use the function keyword.
+        cancel(){alert(this.name+"form cancel")};
+
+        fill(givenname){this.name = givenname; alert(` ${this.name} is filled`)}
+     }
+
+     let aman = new RailwayForm();
+     let ajay = new RailwayForm();
+
+     aman.submit();
+     aman.fill("aman");
+ajay.submit();
+aman.cancel();
+
+</script>
+
+</body>
+</html>
+
+
+<!-- 
+    In JavaScript, the class keyword was introduced in ECMAScript 2015 (ES6) and provides a way to define a "class" of objects, with properties and methods that can be shared among instances of that class.
+
+Here is an example of how to define a class in JavaScript:
+
+javascript
+Copy code
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+In this example, we define a class called Person that has a constructor method and a sayHello method. The constructor method is used to create new instances of the Person class and initialize their properties. The sayHello method is a shared method that can be called on any instance of the Person class.
+
+Here is an example of how to create a new instance of the Person class:
+
+javascript
+Copy code
+const person1 = new Person("John", 30);
+person1.sayHello(); // Output: Hello, my name is John and I am 30 years old.
+In this example, we create a new instance of the Person class using the new keyword and pass in the name and age arguments to the constructor method.
+
+Note that while the class syntax in JavaScript may look similar to classes in other object-oriented programming languages, it is important to remember that JavaScript is still a prototype-based language, and the class syntax is just a syntactic sugar over the existing prototype-based inheritance mechanism.
+
+
+
+
+ -->
+
+
+
+ <!--
+
+    
+
+The this keyword in JavaScript refers to the current object instance. In the RailwayForm class, the cancel method uses the this keyword to access the name property of the current object instance.
+
+When you create an instance of the RailwayForm class using the new keyword, a new object is created with its own set of properties and methods. When you call a method on an instance of the class, the this keyword inside the method refers to that particular instance.
+
+So when you call the fill method on aman and set its name property to "aman", the cancel method can access that name property using this.name. Similarly, if you were to call the fill method on ajay and set its name property to "ajay", the cancel method called on ajay would correctly alert "ajay form cancel".
+
+I hope that clears up any confusion! Let me know if you have any further questions.
+
+
+
+
+Aman Choudhary
+this has access in all methods
+
+Yes, the this keyword has access to all properties and methods of the current object instance. When you define a method in a class, you can use this to refer to the current instance of the class, and then access any of its properties or methods.
+
+For example, in the RailwayForm class you defined earlier, the fill method sets the name property of the current object instance to the given name, and the cancel method uses this.name to retrieve the name property of the current object instance.
+
+When you create an instance of the RailwayForm class using the new keyword, such as let aman = new RailwayForm(), aman becomes an object that has access to all the methods defined in the class, and any this references in those methods refer to the current aman object instance.
+
+So in short, yes, the this keyword has access to all properties and methods of the current object instance.
+
+
+
+
+   -->
+
+
+
+
+
+
+
+

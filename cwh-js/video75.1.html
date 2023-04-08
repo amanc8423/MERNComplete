@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script> // oops
+//prototype
+
+ 
+let a = {
+    name : "aman",
+    class:"4th year"
+}
+console.log(a);
+
+
+let p ={
+    run:()=>{alert("run")}
+}
+
+//   a.run();// it will give error bec a and run is not related
+
+a.__proto__=p;
+a.run();
+
+// if there was method as run then it will run that else prototype one so when a method is not in object and it take from prototype is prototypal inheritance
+
+p.__proto__={
+    friend:"arjun"
+}
+
+console.log(a.friend);
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+    prototype in js
+
+Sure, I can help you with that!
+
+A prototype in JavaScript is an object that acts as a template for other objects. When you create a new object, you can specify its prototype using the Object.create() method.
+
+Here's an example of how to create a prototype in JavaScript:
+
+javascript
+Copy code
+// Create a prototype object
+var personPrototype = {
+  // Define properties and methods for the prototype
+  name: "",
+  age: 0,
+  sayHello: function() {
+    console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+  }
+};
+
+// Create a new object using the prototype
+var person1 = Object.create(personPrototype);
+person1.name = "John";
+person1.age = 30;
+person1.sayHello(); // Output: Hello, my name is John and I am 30 years old.
+
+// Create another object using the prototype
+var person2 = Object.create(personPrototype);
+person2.name = "Jane";
+person2.age = 25;
+person2.sayHello(); // Output: Hello, my name is Jane and I am 25 years old.
+In this example, we create a prototype object called personPrototype that has two properties (name and age) and a method (sayHello). We then create two new objects (person1 and person2) using the Object.create() method, and set their name and age properties. We can then call the sayHello() method on each object to output a message to the console.
+
+I hope that helps! Let me know if you have any further questions.
+
+
+
+
+ -->

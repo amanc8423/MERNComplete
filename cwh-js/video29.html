@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="age"></div>
+
+
+    <script>
+
+do{ 
+var a = prompt("what is your age");
+
+if(a<0){console.error("negative age");}
+if(a>4){location.href="https://www.google.com";}
+
+(a>=18)?alert( "ELIGIBLE"):alert( "NOT ELIGIBLE");
+var cc=confirm("do you want to seee prompt again");
+
+} while(cc);
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+<!-- Document.getelemntbyid does in dom what it gets
+
+The statement "document.getElementById does in DOM what it gets" is not a clear or accurate statement.
+
+document.getElementById is a method in JavaScript's Document Object Model (DOM) that is used to retrieve an HTML element from the DOM using its id attribute. The method returns a reference to the element, which can then be used to manipulate the element's properties or content.
+
+For example, if you have an HTML element with an id attribute of "myElement", you can retrieve it from the DOM using document.getElementById("myElement"). Once you have the reference to the element, you can manipulate its properties or content, such as changing its text or applying CSS styles.
+
+In summary, document.getElementById is a method that allows you to retrieve an HTML element from the DOM using its id attribute and perform further actions on it.
+
+
+
+
+Aman Choudhary
+What is inner HTML 
+
+innerHTML is a property in JavaScript's Document Object Model (DOM) that represents the HTML content within an element.
+
+When you retrieve the innerHTML property of an element, it returns a string that represents the HTML content inside that element, including any child elements, text, and markup.
+
+For example, if you have an HTML element with the following content:
+
+css
+Copy code
+<div id="myDiv">
+  <h1>Hello World!</h1>
+  <p>Welcome to my website.</p>
+</div>
+You can retrieve the innerHTML of the myDiv element using JavaScript like this:
+
+javascript
+Copy code
+var myDiv = document.getElementById("myDiv");
+var content = myDiv.innerHTML;
+In this case, the value of the content variable would be a string that contains the HTML content within the myDiv element, including the h1 and p child elements.
+
+You can also set the innerHTML property of an element to change its content dynamically. For example, if you wanted to change the text of the h1 element within myDiv, you could do it like this:
+
+javascript
+Copy code
+myDiv.innerHTML = '<h1>New Title</h1><p>Welcome to my website.</p>';
+This would replace the existing content of myDiv with the new HTML content specified in the innerHTML assignment. -->
+
+
+
+
+
+
+<!-- If age>4 the location.href is written above then why it shows alert first then redirect 
+
+Good observation! The reason the alert message is shown first before the location.href is because JavaScript is an asynchronous language.
+
+When the location.href is executed, the browser starts the process of navigating to the specified URL. However, the browser doesn't actually navigate to the new URL until the current script has finished executing.
+
+So, in this case, the location.href is executed first, which triggers the browser to start navigating to the new URL. However, before the navigation is complete, the alert message is displayed, because the alert function is synchronous and blocks further execution of the script until the user closes the alert message.
+
+Once the user closes the alert message, the script continues executing and the browser finishes navigating to the new URL specified by location.href. -->

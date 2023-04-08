@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+
+let p= fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
+
+// p.then((response)=>{
+//     console.log(response.status);
+//     console.log(response.ok);
+//     return response.json()
+// }).then((response)=>{
+//     console.log(response)})
+
+
+
+// we can read response only once either json or text -> text will return string ,json will return object
+p.then((response)=>{
+    console.log(response.status);
+    console.log(response.ok);
+    console.log(response.headers);
+    return response.text()
+}).then((response)=>{
+    console.log(response)})
+
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+<!-- 
+A request header is a part of an HTTP request that contains information about the request itself, such as the type of request being made, the 
+client making the request, the server being contacted, and any data being sent as part of the request.
+
+Request headers are sent by the client to the server as part of an HTTP request, and they can contain various types of information, such as:
+
+The type of request being made (e.g., GET, POST, PUT, DELETE)
+The URL of the requested resource
+Information about the client making the request (e.g., user agent, IP address, etc.)
+Any authentication credentials required to access the requested resource
+Any cookies associated with the request
+Any custom headers that the client wishes to include
+Request headers can be added to an HTTP request using various programming languages and tools, such as JavaScript's XMLHttpRequest object, the
+ fetch() method, or server-side programming languages like PHP or Python.
+
+
+
+
+
+ -->
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+       // alert("hello");
+
+//         let a=setTimeout(() => {
+//             alert("out of settimeout");
+//         }, 3000);
+        
+// (confirm("want settimeout")) ? "ok":clearTimeout(a);
+
+// setTimeout((a,b) => {
+//             console.log("running",a+b);
+//         }, 3000,12,8);
+
+
+        let a= setInterval((a,b) => {
+            console.log("running",a+b);
+        }, 3000,12,8);
+
+        clearInterval(a);
+
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+
+<!-- 
+    settimeout and setinterval is part of dom or bom or javascript
+
+setTimeout and setInterval are //built-in functions in JavaScript, not specific to either the DOM (Document Object Model) or// -> BOM (Browser Object Model).
+
+These functions are used for scheduling the execution of a piece of code after a specific amount of time has passed. setTimeout is used to execute a function once after a specified delay, while setInterval is used to repeatedly execute a function with a fixed time delay between each execution.
+
+Both setTimeout and setInterval are part of the Window object in JavaScript, which is the global object in a web browser environment. However, they can also be used in other JavaScript environments such as Node.js.
+
+
+
+
+Aman Choudhary
+are they synchronous or async
+
+setTimeout and setInterval are both asynchronous functions in JavaScript.
+
+When you call setTimeout or setInterval, they don't block the execution of the rest of your code. Instead, they schedule the function you pass to them to be executed at a later time, and then immediately return a timer ID that you can use to cancel the scheduled function if needed.
+
+This means that the code following the setTimeout or setInterval call will continue to execute immediately, without waiting for the scheduled function to complete. When the time delay specified by setTimeout elapses or the interval specified by setInterval passes, the scheduled function is added to the event queue and executed as soon as the JavaScript runtime becomes available.
+
+In summary, setTimeout and setInterval are both asynchronous functions that allow you to schedule the execution of code at a later time.
+
+
+
+
+ -->

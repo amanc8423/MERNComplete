@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+
+        <script>
+
+
+                async function harry() {
+                        let delhiWeather = new Promise((resolve, reject) => {
+                                setTimeout(() => {
+                                        resolve("27 Deg"); console.log("delhi-resolved")
+                                }, 2000)
+                        })
+
+                        let bangaloreWeather = new Promise((resolve, reject) => {
+                                setTimeout(() => {
+                                        resolve("21 Deg"); console.log("banagalore-resolved");
+                                }, 5000)
+                        })
+
+                        //  delhiWeather.then(alert);
+                        //  bangaloreWeather.then(alert); }
+                        console.log("fetching delhi weather");
+                        let delhiW = await delhiWeather;
+                        console.log("fetched delhi weather : ", delhiW);
+
+                        console.log("fetching banaglore weather");
+                        let bangaloreW = await bangaloreWeather;
+                        console.log("fetched banaglore weather : ", bangaloreW);
+
+                        return [delhiW, bangaloreW]
+
+                }
+
+                let a = harry();
+
+                a.then((value) => { console.log(value) });
+                console.log(a)
+
+        </script>
+
+</body>
+
+</html>
+
+
+<!-- 
+        In the given code, harry is an async function that returns a Promise object that resolves to an array of two weather conditions for two cities. The function uses await to wait for the two Promises, delhiWeather and bangaloreWeather, to resolve before returning their values as an array.
+
+When you call harry() and assign it to the variable a, a becomes a Promise object that resolves to an array of weather conditions. However, since harry() is an asynchronous function, the code execution does not wait for the Promise to resolve, and continues to execute the next line of code, which is console.log(a). At this point, a is still a Promise object, and its value is not yet resolved.
+
+To access the resolved value of the Promise, you need to use the then() method. The then() method takes a callback function that will be called when the Promise is resolved, and will be passed the resolved value as its argument. In this case, the then() method is called on a and passed a callback function that logs the resolved value to the console using console.log(value).
+
+So, a.then((value)=>{console.log(value)}) will log the resolved value of the Promise to the console once it has been resolved.
+
+On the other hand, console.log(a) logs the Promise object itself to the console, which is not very useful. It will not log the resolved value of the Promise, but rather the Promise object itself.
+ -->
+
+
+<!-- Yes, that's correct. When we use await to wait for a Promise to resolve, the JavaScript engine can continue executing other code while it's waiting for the Promise to resolve. In this case, while we are waiting for the delhiWeather Promise to resolve, the bangaloreWeather Promise is running in the background and is waiting to be resolved.
+
+So, when we use await to wait for a Promise to resolve, we can still execute other code in the meantime, allowing us to perform other tasks while we wait for the Promise to resolve. -->

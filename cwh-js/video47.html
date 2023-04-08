@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+</head>
+<body>
+    
+
+    <div class="container" > 
+        <!-- onmouseenter="alert('mouse in container')"   -->
+        <button onclick="alert('smsn') ">button </button>
+    </div>
+    <script>
+       let a= document.getElementsByClassName("container")[0];
+
+    //    a.onclick=alert("this onclick has more priority");
+       a.onclick=()=>alert("this onclick has more priority");
+    </script>
+
+
+</body>
+</html>
+<!-- In JavaScript, functions and expressions are evaluated when they are encountered in the code, which is known as runtime. So, if you call a function directly in the code without wrapping it inside another function, it will be executed immediately when the code is run.
+
+In the code you provided earlier, the alert function is called directly on the right side of the assignment statement for the onclick property:
+
+less
+Copy code
+a.onclick = alert("this onclick has more priority");
+In this case, the alert function will be executed immediately when the script is run, and the return value of the function (which is undefined) will be assigned to the onclick property. As a result, the alert dialog will be displayed immediately when the page is loaded, rather than waiting for the onclick event to occur.
+
+So, to ensure that the alert function is only called when the associated event occurs, you need to wrap it inside a function and assign that function to the onclick property, like this:
+
+scss
+Copy code
+a.onclick = function() {
+    alert("this onclick has more priority");
+};
+This code sets the onclick property to a function that will only be executed when the associated event occurs, allowing you to control the timing and behavior of the alert dialog -->
+
+<!-- 
+    Yes, all events in JavaScript are part of the DOM (Document Object Model). The DOM provides an interface that allows JavaScript to interact with the HTML elements, attributes, and other content of a web page, including events.
+
+Events are actions or occurrences that happen in the browser, such as a user clicking a button, hovering over an element, or submitting a form. JavaScript can respond to these events by attaching event listeners to the relevant HTML elements and executing a function when the event occurs.
+
+In the DOM, events are represented as objects that have properties and methods that can be manipulated by JavaScript code. For example, the addEventListener method can be used to attach a function to an event on a particular element, such as a click event on a button. When the event occurs, the function is executed, allowing JavaScript to respond to user actions and other events in the browser.
+ -->

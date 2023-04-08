@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document title</title>
+</head>
+<script> console.log(document.body);</script> 
+<!--   above it will return null bec we are accessing js before body -->
+
+
+<body>
+    
+    <script>  
+        document.write(document.documentElement); // write in console
+        document.write(typeof document.documentElement);
+
+        console.log(document.documentElement);
+        console.log( typeof document.documentElement);// it returns object
+
+        console.log(document.body);
+        console.log(typeof document.body);// object
+
+        console.log(document.head); 
+        console.log(typeof document.head);//object
+
+        console.log(document);
+        console.log(typeof document);//object
+
+        console.log(document.title);
+        console.log(typeof document.title); // it return string
+
+        </script>
+
+
+</body>
+</html>
+
+
+
+<!-- document.getElementsByClassName("cursor-pointer")[3].style.color="red"; -->

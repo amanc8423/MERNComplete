@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>//doubt
+const createTodo = async ()=>{
+let options = {
+    method:"POST",
+    headers :{
+        "content-type":"application/json"},
+        body : JSON.stringify({
+            title:'foo',
+            body:'bar',
+            userId:1
+        }),
+ 
+    }
+
+    
+let p = await fetch('https://jsonplaceholder.typicode.com/posts',options) // if not write await then error because first this should resolve before going to json
+ 
+let response = await p.json()
+return response
+
+}
+
+// mainFunc =  ()=>{
+//     let todo = createTodo(); // this will return promise
+//     console.log(todo);
+// }
+
+
+mainFunc = async  ()=>{
+    let todo = await createTodo();
+    console.log(todo);
+}
+
+mainFunc();
+
+</script>
+
+
+</body>
+</html>
+
+
+
+<!--
+
+const createTodo = async ()=>{
+let options = {
+    method:"POST",
+    headers :{
+        "content-type":"application/json"},
+        body : JSON.stringify({
+            title:'foo',
+            body:'bar',
+            userId:1
+        }),
+ 
+    }
+
+    
+let p =  fetch('https://jsonplaceholder.typicode.com/posts',options)
+ 
+let response = await p.json()
+return response
+
+}
+p.json is not a function error
+
+The error "p.json is not a function" occurs because fetch method returns a Promise that resolves to the Response object. However, the json() method is not available on the Response object directly.
+
+You need to call the json() method on the Response object after it is resolved from the Promise. Therefore, you should replace the line:
+
+csharp
+Copy code
+let response = await p.json()
+with:
+
+csharp
+Copy code
+let response = await p;
+let data = await response.json();
+return data;
+This will wait for the Promise returned by fetch to resolve with the Response object. Then, the json() method will be called on the Response object to extract the JSON data, which is then returned from the createTodo function.
+
+
+
+
+Aman Choudhary
+if i dont write await p
+
+If you don't use the await keyword to wait for the p Promise to resolve before calling the json() method, then the json() method will be called on the Promise object itself, which does not have a json() method, resulting in a TypeError.
+
+To correctly extract the JSON data from the response, you need to await the p Promise to resolve first, and then call the json() method on the Response object that is returned from the fetch call.
+
+Here's the updated code with the corrections:
+
+javascript
+Copy code
+const createTodo = async () => {
+    let options = {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            title: 'foo',
+            body: 'bar',
+            userId: 1
+        })
+    }
+
+    let p = fetch('https://jsonplaceholder.typicode.com/posts', options)
+
+    let response = await p;
+    let data = await response.json();
+    return data;
+}
+
+createTodo().then(result => console.log(result))
+With this updated code, the createTodo() function will correctly wait for the p Promise to resolve before calling the json() method on the Response object to extract the JSON data from the response.
+
+
+
+
+Aman Choudhary
+but p will return a promise so why await
+
+You are correct that fetch returns a Promise, which means that p is a Promise object. However, you still need to use the await keyword to wait for the Promise to resolve before using the json() method.
+
+The reason for this is that the json() method is not available on the Promise object returned by fetch. Instead, it is available on the Response object that is returned when the Promise is resolved.
+
+By using the await keyword, you are telling the JavaScript engine to wait for the Promise to resolve and return the Response object before continuing to the next line of code. This allows you to call the json() method on the Response object to extract the JSON data from the response.
+
+If you do not use the await keyword, then the json() method will be called on the Promise object itself, which does not have a json() method, resulting in a TypeError.
+
+
+
+
+
+  -->

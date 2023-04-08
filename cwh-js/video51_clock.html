@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+    #clock{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 25px solid red;
+        height: 50vh;
+        width: 50vw;
+        margin: auto ;
+        font-weight:bold ;
+        color: blue;
+        background-color: burlywood;
+        border-radius: 50%;
+        margin-top: 50px; 
+        font-size: 50px;
+    }
+
+    body{
+        background-color: aqua;
+    }
+</style>
+
+
+
+<body>
+
+    <div id="clock">
+    
+    </div>
+
+
+<script>
+    // let d = new Date().toLocaleDateString;
+    div = document.getElementById('clock');
+//let d = new Date().toLocaleTimeString();
+
+let time = () => {let d = new Date().toLocaleTimeString(); div.innerHTML=d;}
+
+
+    setInterval(time,1000);
+        //setInterval(()=>{console.log("sd")},1000)
+</script>
+
+</body>
+</html>

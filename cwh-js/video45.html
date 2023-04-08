@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+#first.red{
+    color: red;
+
+    /* if only .red then .text will override but now its specificity is higher */
+}
+.text{
+    background-color: brown;
+    color: white;
+}
+.blue{
+    color: black;
+background-color: blue;
+}
+.green{
+    background-color: green;
+    color: whitesmoke;
+}
+
+</style>
+
+</head>
+<body>
+    
+<div id="first" class="green" >
+    <span>hey i am good</span>
+</div>
+<script>
+    first.className="text"; // it will replace all existing class
+     first.classList.add("red");
+    //first.classList.remove("red");
+    // first.classList.toggle("blue");
+    // first.classList.toggle("text");
+    // a=first.classList.contains("blue");
+    // console.log(a);
+
+</script>
+
+</body>
+</html>

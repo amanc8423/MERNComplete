@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>// Callbacks
+    function loadScript(src, callback) {
+        var script = document.createElement("script");
+        script.src = src;
+        script.onload = function() {
+          console.log("Loaded script with SRC: " + src)
+          callback(null, src);
+        }
+        script.onerror = function() {
+          console.log("Error loading script with SRC: " + src);
+          callback(new Error("Src got some error"))
+        }
+        document.body.appendChild(script);
+      }
+      
+      function hello(error, src) {
+        if (error) {
+          console.log(error)
+          return
+        }
+        alert('Hello World!' + src);
+      }
+      
+      
+      function goodmorning(error, src) {
+        
+        if (error) {
+          console.log(error)
+          sendEmergencyMessageToCeo();
+          return
+        }
+        alert('Good morning' + src);
+      }
+      
+      loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js", goodmorning) </script>
+</body>
+</html>
+
+
+/*
+callbacks in js
+
+In JavaScript, a callback function is a function that is passed as an argument to another function, and is executed when the first function has 
+completed its task. Callback functions are often used in asynchronous programming, where a function needs to perform an action that could take 
+some time, and the program cannot wait for the action to complete before moving on to the next task.
+
+Here's an example of a simple callback function in JavaScript:
+
+javascript
+Copy code
+function greet(name, callback) {
+  console.log('Hello, ' + name + '!');
+  callback();
+}
+
+function sayGoodbye() {
+  console.log('Goodbye!');
+}
+
+greet('Alice', sayGoodbye);
+In this example, the greet function takes two arguments: a name to greet, and a callback function to execute after the greeting has been printed
+ to the console. The sayGoodbye function is defined separately, and is passed as the second argument to the greet function. When greet is called 
+ with the name 'Alice' and the sayGoodbye function, it will print 'Hello, Alice!', and then immediately execute the sayGoodbye function, which 
+ will print 'Goodbye!' to the console.
+
+Callbacks are often used with asynchronous functions such as setTimeout, setInterval, and fetch. Here's an example of using a callback with 
+setTimeout:
+
+javascript
+Copy code
+function showMessage() {
+  console.log('Hello, world!');
+}
+
+setTimeout(showMessage, 1000);
+In this example, the setTimeout function is called with two arguments: a function to execute (showMessage), and a delay in milliseconds (1000).
+ After 1000 milliseconds (or 1 second), the showMessage function will be executed, and will print 'Hello, world!' to the console.
+
+
+
+
+Aman Choudhary
+why we need callback
+
+Callbacks are important in JavaScript for handling asynchronous operations. Asynchronous operations are tasks that take some time to complete 
+and are not completed immediately, such as fetching data from an API, reading a file, or waiting for a user action.
+
+Using callbacks allows us to execute code in response to these asynchronous operations. When we pass a function as a callback to another function, 
+we can ensure that the callback function is executed only when the asynchronous operation has completed.
+
+Callbacks are especially useful in web development, where JavaScript is often used to handle user interactions and network requests. For example, 
+when a user clicks a button on a web page, JavaScript can use a callback function to respond to the event and update the page content without 
+having to reload the entire page.
+
+Callbacks also enable us to write more modular and reusable code. By passing functions as arguments, we can create functions that are more 
+flexible and can be used in different contexts.
+
+Overall, callbacks are an important tool for handling asynchronous programming in JavaScript, and are essential for creating responsive and 
+interactive web applications.
+
+
+*/
+
+
+
+/*   //pyramid of doom or callback hell
+
+Pyramid of Doom" is a term used to describe a coding pattern that arises when working with nested callbacks, particularly when dealing with 
+asynchronous code. It refers to the situation where multiple levels of indentation are created due to the callbacks being nested inside one 
+another, which can make the code difficult to read, debug, and maintain.
+
+Here's an example of the Pyramid of Doom:
+
+javascript
+Copy code
+doSomething(function(result1) {
+  doSomethingElse(result1, function(result2) {
+    doYetAnotherThing(result2, function(result3) {
+      // ...
+    });
+  });
+});
+As you can see, the code becomes increasingly indented as each callback is nested inside the previous one, which can quickly become unwieldy 
+and hard to follow.
+
+To avoid the Pyramid of Doom, there are several approaches you can take, including:
+
+Using Promises: Promises provide a cleaner and more concise way to handle asynchronous code. Promises are objects that represent a future value 
+and provide a way to chain asynchronous operations without nesting callbacks.
+
+Using async/await: Async/await is a newer feature of JavaScript that allows you to write asynchronous code in a synchronous style. It makes your
+S code easier to read and follow, by allowing you to write code that looks like regular synchronous code, while still executing asynchronously.
+
+Here's an example of using Promises to avoid the Pyramid of Doom:
+
+javascript
+Copy code
+doSomething()
+  .then(function(result1) {
+    return doSomethingElse(result1);
+  })
+  .then(function(result2) {
+    return doYetAnotherThing(result2);
+  })
+  .then(function(result3) {
+    // ...
+  })
+  .catch(function(error) {
+    // handle errors
+  });
+And here's an example of using async/await:
+
+csharp
+Copy code
+async function doAsyncStuff() {
+  try {
+    const result1 = await doSomething();
+    const result2 = await doSomethingElse(result1);
+    const result3 = await doYetAnotherThing(result2);
+    // ...
+  } catch (error) {
+    // handle errors
+  }
+}
+Both of these approaches make the code more readable and easier to understand, without sacrificing the benefits of asynchronous programming.
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+

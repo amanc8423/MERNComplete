@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hey" id="first" data-game="mario" data-player="aman">hey i am aman</div>
+    
+<script>
+    first = document.getElementById("first"); 
+    let a = first.getAttribute("class"); //  - it is also working without above line but we should not do this
+    console.log(a);
+    console.log(first.hasAttribute("style"));
+first.setAttribute("hidden","true");
+first.setAttribute("class","sachin true");
+first.removeAttribute("hidden");
+console.log(first.attributes);
+
+//custom attribute
+
+console.log(first.dataset);
+
+console.log(first.dataset.game);
+
+console.log(first.dataset.player);
+
+
+</script>
+    
+</body>
+</html>
+

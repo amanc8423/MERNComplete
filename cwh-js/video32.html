@@ -1,0 +1,42 @@
+
+<!-- // DOUBTS -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <p>i ama man</p>
+    <span>sibling</span>
+</div>
+
+    
+<script>
+
+    console.log( document.body.firstChild    ) // it will give textnode that is space
+
+  console.log( document.body.lastChild    )  // doubt why it not give text node
+
+  console.log( document.body.childNodes    ) // it will make nodelist
+
+  
+  console.log( document.body.childNodes[0] ) 
+  
+  console.log( document.body.childNodes[1] ) 
+
+  var arr = Array.from(document.body.childNodes);
+  console.log(arr);
+
+</script>
+
+
+</body>
+</html>
+
+

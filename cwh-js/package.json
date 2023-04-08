@@ -1,0 +1,15 @@
+{
+  
+  "dependencies": {
+  
+    
+  "pdf-node": "^1.0.1",
+  
+    
+  "prompt-sync": "^4.2.0",
+  
+    
+  "random": "^4.1.0"
+  
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    check in console
+<script>
+
+
+let p1 = new Promise((resolve,reject)=>{
+    console.log("promise pending");
+
+    setTimeout(() => {
+        console.log("resolved after 2 seconds");
+        resolve(56);
+    }, 3000);
+})
+
+
+p1.then((value)=>{
+    console.log(value)
+let p2 = new Promise((resolve,reject)=>{
+    //resolve("promise 2")
+    setTimeout(()=>{console.log("p2"); resolve("promise 2")
+  },8000)
+})
+ //return p2;
+}).then((value)=>{console.log("we are done",value)})
+
+
+console.log(p1);
+
+</script>
+
+<!-- why we have to write return p2 ? without it, p2 is not waiting for 2 seconds  -->
+
+<!-- The reason why p2 seems to be executed immediately after p1 is resolved, without waiting for the 2 seconds specified in its setTimeout method, is that p2 is not actually chained to p1.
+
+In the current code, p2 is created inside the callback function of the p1.then() method, but it is not returned or chained to the p1 Promise. Therefore, the p2 Promise is not dependent on the resolution of p1, and its setTimeout method will be executed immediately after it is created.
+
+To make p2 dependent on the resolution of p1 and wait for 2 seconds before resolving, you can chain it to p1 like this:
+
+javascript
+Copy code
+p1.then((value) => {
+  console.log(value);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("resolved after 2 seconds");
+      resolve("promise 2");
+    }, 2000);
+  });
+}).then((value) => {
+  console.log("we are done");
+});
+In this updated code, the callback function of the p1.then() method returns a new Promise object created with new Promise((resolve, reject) => {...}), which has a setTimeout method that waits for 2 seconds before resolving with a value of "promise 2". This new Promise is then chained with another .then() method that executes the callback function which prints "we are done" to the console. -->
+
+<!-- 
+    Yes, that's correct. In the original code, the last callback function that logs "we are done" is not chained to any Promise because it is not returned by a then() method. As a result, it will be executed immediately after the p2 Promise is created, without waiting for its setTimeout method to complete.
+ -->
+
+
+
+</body>
+</html>
+
+
+<!-- You're right, p2 is not waiting for two seconds as expected. This is because the then method that creates p2 is nested inside the then method that is chained to p1. As a result, p2 is created immediately after p1 is resolved, rather than waiting for the first then method to finish executing.
+
+To fix this issue, you can separate the then methods and chain them to p1 separately:
+
+javascript
+Copy code
+let p1 = new Promise((resolve,reject)=>{
+    console.log("promise pending");
+
+    setTimeout(() => {
+        console.log("resolved after 3 seconds");
+        resolve(56);
+    }, 3000);
+});
+
+p1.then((value)=>{
+    console.log(value);
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{resolve("promise 2")},2000);
+    });
+})
+.then((value)=>{
+    console.log(value);
+    console.log("we are done");
+});
+In this updated code, the then methods are chained separately to p1, so p2 is created after the first then method finishes executing. Now p2 will wait for two seconds before resolving with "promise 2".
+
+
+
+ -->

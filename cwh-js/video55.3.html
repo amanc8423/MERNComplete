@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    check in console
+<script>
+
+
+let p1 = new Promise((resolve,reject)=>{
+    console.log("promise pending");
+
+    setTimeout(() => {
+        resolve(true);
+    }, 5000);
+})
+
+
+let p2 = new Promise((resolve,reject)=>{
+
+    setTimeout(() => {
+    
+        reject(new Error("i am error"));
+    }, 5000);
+})
+
+console.log(p1,p2);
+// console.log(p2);
+
+p1.then((value)=>{console.log(true)})
+p2.catch((error)=>{console.log("error occurred in p2")})// after catch it will not show error in console
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+    why do we nedd these promises what is their benefit
+
+Promises are used in JavaScript to handle asynchronous operations and their results in a more readable and predictable way. Asynchronous operations are those that take some time to complete and do not block the main thread, such as fetching data from a remote server, reading and writing files, and interacting with databases.
+
+Before promises were introduced in JavaScript, the most common way to handle asynchronous operations was through callbacks. However, callback-based code can become complex and difficult to read, especially when multiple asynchronous operations are involved. This is known as "callback hell."
+
+Promises provide a simpler and more organized way to handle asynchronous operations. Promises have three states: pending, fulfilled, and rejected. When a promise is created, it is in the pending state. Once the promise is resolved, it moves to the fulfilled state with a value, or to the rejected state with a reason for the rejection.
+
+Promises provide methods such as then() and catch() to handle the resolved and rejected states respectively. The then() method is used to handle the fulfilled state and accepts a callback function that is executed when the promise is resolved. The catch() method is used to handle the rejected state and accepts a callback function that is executed when the promise is rejected.
+
+Promises also allow us to chain multiple asynchronous operations in a more readable and maintainable way, without getting into nested callback functions. This helps improve the readability and organization of our code.
+
+In summary, the benefits of using promises in JavaScript are:
+
+They provide a more organized way to handle asynchronous operations.
+They allow for easier error handling with the catch() method.
+They provide a way to chain multiple asynchronous operations in a more readable way.
+They help avoid "callback hell" and make our code more maintainable.
+
+
+
+ -->
+

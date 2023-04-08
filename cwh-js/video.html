@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">button</button>
+
+    <script>
+         let x = (e, arg1, arg2) => {
+    console.log(e); // event object
+    console.log(arg1); // first argument
+    console.log(arg2); // second argument
+  };
+  
+  btn.addEventListener('click', (e) => {
+x(e, 'hello', 'world'); });
+    </script>
+    
+</body>
+</html>
+
+
+<!-- 
+
+    n this code:
+
+html
+Copy code
+<button id="btn">button</button>
+
+<script>
+  let x = (e, arg1, arg2) => {
+    console.log(e); // event object
+    console.log(arg1); // first argument
+    console.log(arg2); // second argument
+  };
+  
+  let btn = document.getElementById("btn");
+  btn.addEventListener('click', (e) => {
+    x(e, 'hello', 'world');
+  });
+</script>
+e is a parameter in the arrow function that is used as the callback function for the click event. When the click event is triggered (when the button is clicked), an event object is created that contains information about the event, such as the target element and the mouse coordinates.
+
+This event object is passed to the callback function as its first parameter, which in this case is e. The x function then logs this event object to the console, along with the arg1 and arg2 arguments that were passed in.
+
+By logging the event object to the console, you can inspect its properties and use them to perform additional actions or to modify the behavior of your program in response to the event.
+ -->

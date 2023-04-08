@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script> // try catch
+
+setTimeout(()=>{console.log("1")},1000);
+setTimeout(()=>{console.log("2")},2000);
+//console.log(asas); // it will give error and will stop further execution
+
+try {
+    console.log(asas); 
+} catch (error) {
+    console.log("error"); 
+}
+
+try{  
+setTimeout(()=>{console.log(djdfndj)},3000);  } // here try catch will not wrok work because it is scheduled or write try inside function
+
+catch(error){console.log("error")}
+
+
+setTimeout(()=>{console.log("4")},4000);
+</script>
+
+
+
+</body>
+</html>

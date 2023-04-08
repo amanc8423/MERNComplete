@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    check in console
+<script>
+
+
+let p1 = new Promise((resolve,reject)=>{
+    console.log("promise pending");
+
+    setTimeout(() => {
+        console.log("i am promise and fulfilled");
+        resolve(true);
+    }, 5000);
+})
+
+
+let p2 = new Promise((resolve,reject)=>{
+    console.log("promise pending");
+
+    setTimeout(() => {
+        console.log("i am promise and rejected");
+        reject(new Error("i am error"));
+    }, 5000);
+})
+
+console.log(p1,p2);
+// console.log(p2);
+
+p1.then((value)=>{console.log(true)});p2.catch((value)=>{console.log(value)})
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+<!-- 
+    This code creates two promises, p1 and p2, that simulate asynchronous operations using setTimeout. Both promises log some messages to the 
+    console to show their state, either fulfilled or rejected.
+
+Here is a breakdown of the code:
+
+javascript
+Copy code
+let p1 = new Promise((resolve, reject) => {
+  console.log("promise pending");
+
+  setTimeout(() => {
+    console.log("i am promise and fulfilled");
+    resolve(true);
+  }, 5000);
+});
+
+let p2 = new Promise((resolve, reject) => {
+  console.log("promise pending");
+
+  setTimeout(() => {
+    console.log("i am promise and rejected");
+    reject(new Error("i am error"));
+  }, 5000);
+});
+
+console.log(p1);
+console.log(p2);
+When this code is executed, it will output the following to the console:
+
+arduino
+Copy code
+promise pending
+promise pending
+Promise { <pending> }
+Promise { <pending> }
+The messages "promise pending" are logged for each promise, indicating that they are in the pending state. After 5 seconds, p1 will be fulfilled 
+and log "i am promise and fulfilled" to the console, resolving with the value true. On the other hand, after 5 seconds, p2 will be rejected and log "i am promise and rejected" to the console, rejecting with a new Error object.
+
+Note that when we log p1 and p2 to the console, we see that they are both Promise objects in the pending state. This is because the setTimeout
+ function is used to delay the fulfillment or rejection of the promise, and the console.log() statements are executed immediately.
+ -->

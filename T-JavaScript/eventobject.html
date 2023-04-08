@@ -1,0 +1,75 @@
+<!-- // section 2️⃣: What is Event Object?
+// Event object is the parent object of the event object. 
+// for Example 
+// MouseEvent, focusEvent, KeyboardEvent etc  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        a{border : 4px solid red;
+        margin:50px ;
+    padding: 5px;
+    text-decoration: none;}
+
+    div{ display: flex;
+    flex-direction: column;}
+    </style>
+</head>
+<body>
+    
+<div><a href="#" onclick='alert("first way")'>first way</a> 
+    <a href="#" onclick="fun()">second way</a>  
+    <a href="#" id="t">third way</a> 
+    <a href="#" id="f" >fourth way</a> </div>
+
+
+    <script>
+ 
+ const p= document.getElementById("f");
+
+const checkEvent = ()=>{
+    console.log(event);
+    console.log(event.target);
+    console.log(event.type);
+}
+
+f.addEventListener('click',checkEvent);
+
+
+    </script>
+
+</body>
+</html>
+
+
+<!-- // section ️3️⃣ MouseEvent in JavaScript
+// The MouseEvent Object
+// Events that occur when the mouse interacts with the HTML 
+// document belongs to the MouseEvent Object.
+//onmouseup,onmousedown,mouseenter,mouseleave,
+
+
+
+
+// section ️4️⃣ KeyboardEvent  in JavaScript
+// Events that occur when user presses a key on the keyboard, 
+// belongs to the KeyboardEvent Object.
+// https://www.w3schools.com/jsref/obj_keyboardevent.asp
+
+//  onkeypress,onkeydown,onkeydown,onkeyup
+
+
+// Section 5️⃣ InputEvents in JavaScript 
+// The onchange event occurs when the value of an element has been changed.
+
+
+// For radiobuttons and checkboxes, the onchange event occurs when the 
+// checked state has been changed. -->

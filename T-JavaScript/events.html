@@ -1,0 +1,59 @@
+<!-- //section 1️⃣ 4 ways of writing Events in JavaScript
+
+// 1: using inline events alert();
+// 2: By Calling a funcion (We already seen and most common way of writing) 
+// 3: using Inline events (HTML onclick="" property and element.onclick)
+// 4: using Event Listeners (addEventListener and IE's attachEvent)
+
+// *** in third way fucntion gets overwrite while in fourth way there is no overwrite -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        a{border : 4px solid red;
+        margin:50px ;
+    padding: 5px;
+    text-decoration: none;}
+
+    div{ display: flex;
+    flex-direction: column;}
+    </style>
+</head>
+<body>
+    
+<div><a href="#" onclick='alert("first way")'>first way</a> 
+    <a href="#" onclick="fun()">second way</a>  
+    <a href="#" id="t">third way</a> 
+    <a href="#" id="f">fourth way</a> </div>
+
+
+    <script>
+       function fun(){ alert("second way");}
+
+
+const d= document.getElementById("t")
+ d.onclick = () => alert("third way");
+ d.onclick = () => console.log("third way");
+
+
+
+ 
+const p= document.getElementById("f");
+
+p.addEventListener('click',()=>alert("fourth way"));
+
+p.addEventListener('click',()=>console.log("fourth way"))
+
+
+    </script>
+
+</body>
+</html>

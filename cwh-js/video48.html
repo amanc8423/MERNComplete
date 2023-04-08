@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //addEventListener is used to add function in events -->
+
+<div>
+    <button id="btn">click</button>
+</div>
+
+<script>
+//     btn.addEventListener('click',()=>alert("hello"));
+//     btn.addEventListener('click',()=>alert("hi"));
+// var a = prompt("enetr number");
+
+// (a==2)?btn.removeEventListener('click',()=>alert("hello")) :  btn.addEventListener('click',()=>alert("hi"));
+// // above will not work because brecause two different functions(alert) there references need to be same
+
+btn = document.getElementById('btn');
+let x=(e)=>{alert("hello"); 
+console.log(e);
+console.log(e.type);
+console.log(e.clientX); console.log(e.clientY);
+
+}
+// e is event object
+btn.addEventListener('click',x);
+
+let y=()=>alert("hi");
+    btn.addEventListener('click',y);
+
+//var a = prompt("eneter number");
+
+ //(a==2)?btn.removeEventListener('click',x) :  btn.removeEventListener('click',y);
+// // above will not work because brecause two different functions(alert) there references need to be same
+
+</script>
+
+</body>
+</html>
+
+<!--  if we want argument in addeventlistener
+    <button id="btn">Click me</button>
+<script>
+  let btn = document.getElementById('btn');
+  
+  let x = (e, arg1, arg2) => {
+    console.log(e); // event object
+    console.log(arg1); // first argument
+    console.log(arg2); // second argument
+  };
+  
+  btn.addEventListener('click', (e) => {
+    x(e, 'hello', 'world');
+  });
+</script>
+
+ -->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+    // promise api
+    let p1 = new Promise((resolve,reject)=>{
+
+setTimeout(()=>{resolve("value 1")},4000)
+
+    })
+
+    let p2 = new Promise((resolve,reject)=>{
+
+setTimeout(()=>{resolve("value 2")},2000)
+
+    })
+
+    let p3 = new Promise((resolve,reject)=>{
+
+setTimeout(()=>{resolve("value 3")},6000)
+
+    })
+
+   
+
+    // p1.then(()=>{console.log("1 resolved now")})
+    // p2.then(()=>{console.log("2 resolved now")})
+    // p3.then(()=>{console.log("3 resolved now")})
+
+//let promise_all = Promise.all([p1,p2,p3]);// in this if any one fail then it will fail
+//promise_all.then(()=>{console.log("all resolved now")});
+
+// let promise_all = Promise.allSettled([p1,p2,p3]); // it will show status of promises
+// promise_all.then((value)=>{console.log(value)});
+
+// let promise_all = Promise.race([p1,p2,p3]); // will give result of fastest first to resolve if error then will give error
+// promise_all.then((value)=>{console.log(value)});
+
+// let promise_all = Promise.any([p1,p2,p3]); // will give result of first to resolve if any error then second
+// promise_all.then((value)=>{console.log(value)});
+
+// let promise_all = Promise.resolve(6); 
+let promise_all = Promise.reject(new Error("hey error")); 
+
+
+</script>
+</script>
+
+</body>
+</html>
