@@ -1,2 +1,5 @@
-console.log(__dirname);
-console.log(__filename);
+rstream.on("error", (err) => {    // if error happens 
+    console.log(err);
+    res.end("file not found");
+
+  });

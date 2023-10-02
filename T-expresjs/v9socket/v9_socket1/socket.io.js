@@ -38,7 +38,7 @@ io.on('connection',(socket)=>{ // on is for event catch like on connect and disc
 });
 
 
-http.listen(3000,()=>{console.log("server on")});
+http.listen(3050,()=>{console.log("server on")});
 
 
 

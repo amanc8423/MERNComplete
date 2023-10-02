@@ -33,12 +33,12 @@ socket.on('disconnect',()=>{ // use of 'on' is to catch events
        
         users--;
 io.sockets.emit('broadcast',{message : users + ' users disconnected'}); // io.sockets.emit it will send t all users
-
+// users value wrong in above
     });
 });
 
 
-http.listen(3000,()=>{console.log("server on")});
+http.listen(3050,()=>{console.log("server on")});
 
 
 

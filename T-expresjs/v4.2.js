@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{   // app.get is also middleware but here we dont need n
 });
 
 app.get('/about/:name',(req,res)=>{
-    res.status(200).send("welcome to about page "+req.params.name)
+    res.status(200).send("welcome to about page "+req.params.name) // : is used to get name from req.params
 
 });
 

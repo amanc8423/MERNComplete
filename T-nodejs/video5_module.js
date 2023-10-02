@@ -24,3 +24,4 @@ const bu_data=fs.readFileSync('read.txt');
 // to rename file
 fs.renameSync('read.txt','readwrite.txt');
  
+

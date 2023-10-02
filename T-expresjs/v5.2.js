@@ -14,7 +14,7 @@ function myMiddleware(req, res, next) {
 
 // Attach the middleware function to the route handler
  // app.use(myMiddleware);// it wll work with all
-app.use('/about',myMiddleware);// it will only work with /about route
+app.use('/about/name',myMiddleware);// it will only work with /about route
 
 // Attach the route handler function to a specific route
 app.get("/", (req, res)=> {
@@ -26,9 +26,12 @@ app.get("/home", (req, res)=>  {
 app.get("/about", (req, res)=>  {
     res.send("Hello, about");
   });
+  app.get("/about/name", (req, res)=>  {
+    res.send("Hello, about name");
+  });
 
 // Start the server
-app.listen(3000, () => {
+app.listen(3050, () => {
   console.log("Server is running on port 3000");
 });
 

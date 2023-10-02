@@ -1,5 +1,6 @@
 // npm doesnt allow capital letter npm init or npm init -y
 // express  is used in routing and api
+//espress is nodejs framewrok used in routing it is subsitution for http
 // const express = require('express');
 
 // const app = express();
@@ -42,7 +43,8 @@ app.listen(8000,()=>{console.log("server on")})
 /*
 express is module or framework in nodejs
 Express is a framework for Node.js. It is a minimal and flexible web application framework that provides a set of features for 
-building web and mobile applications. Express is built on top of Node.js and provides an easy-to-use API for handling HTTP requests,
+building web and mobile applications. 
+Express is built on top of Node.js and provides an easy-to-use API for handling HTTP requests,
  defining routes, and handling middleware.
 
 Express simplifies the process of building web applications in Node.js by providing a wide range of features such as routing, middleware, 

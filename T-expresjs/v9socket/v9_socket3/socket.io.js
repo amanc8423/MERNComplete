@@ -16,13 +16,17 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'socket.html'));
 })
 
-io.on('connection',(socket)=>{ // on is for event catch like on connect and disconnect
+
+io.on('connection',(socket)=>{    // on is for event catch like on connect and disconnect
     console.log("user connected");
 
 
-  socket.on('myCustomEventFromClientSide',(data)=>{
-       console.log(data);
-  })
+    socket.on("my",(data)=>{
+        console.log(data);
+    })
+
+//socket.emit("tq","Thank you");
+
 
 
     socket.on('disconnect',()=>{ // use of 'on' is to catch events

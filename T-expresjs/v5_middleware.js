@@ -21,3 +21,9 @@ app.get('/users',(req,res)=>{
 });
 
 app.listen(5000);
+
+
+
+/*
+https://stackoverflow.com/questions/15601703/difference-between-app-use-and-app-get-in-express-js
+*/

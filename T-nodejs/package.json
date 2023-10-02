@@ -4,7 +4,7 @@
   "description": "thapa tutorial node tuts",
   "main": "1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node your-script.js"
   },
   "author": "aman",
   "license": "ISC",

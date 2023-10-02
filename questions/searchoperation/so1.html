@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+            <p> Enter Class of the students to filter the data</p>
+            <input type="text" id="class"/>
+            <div id="data"></div>
+            <button  onclick="handleSubmit()">submit</button>
+   <script>
+
+        var data = document.getElementById("data");
+
+
+        const arr = [{name:"arun", class:"a"} , {name:"abhinav", class:"b"}];
+
+        arr.map((item,idx)=>{
+            var p  = document.createElement("p");
+            var temp = document.createTextNode(`${item.name} is from class ${item.class} `);
+            p.appendChild(temp);
+           data.appendChild(p);
+    
+        })
+
+
+
+        function handleSubmit() {
+
+            // alert('hello');
+
+            data.innerText ="";
+
+            var inp = document.getElementById("class");
+
+            const marr = arr.filter(item=>item.class === inp.value);
+
+            
+
+            marr.length !=0? ( 
+                 marr.map((item,idx)=>{
+                    var p  = document.createElement("p");
+            var temp = document.createTextNode(`${item.name} is from class ${item.class} `);
+            p.appendChild(temp);
+           data.appendChild(p);
+        })):data.innerText="not found";
+            
+        }
+   </script>
+
+
+</body>
+</html>

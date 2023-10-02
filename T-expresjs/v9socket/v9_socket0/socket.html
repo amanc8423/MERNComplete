@@ -16,6 +16,16 @@
 const socket = io(); // above cdn has io method
 
 
+let c = ()=>{
+    socket.emit("message","wow server");
+}  ;
+
+let a = setInterval(c,2000 );
+
+setTimeout(()=>{
+    clearInterval(a);
+},12000);
+
 </script>
 
 </body>

@@ -39,7 +39,7 @@ server.listen(7000,"127.0.0.1");   */
 //   Create a readable stream
 //   Handle stream events --> data, end, and error
 server.on("request", (req, res) => {
-  const rstream = fs.createReadStream("read123.txt");
+  const rstream = fs.createReadStream("package.json");
 
   rstream.on("data", (chunkdata) => {
     res.write(chunkdata);

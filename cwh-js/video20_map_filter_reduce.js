@@ -1,5 +1,7 @@
 var a = [1,3,8,5,6];
 
+
+
 console.log(a.map((e,i,a)=> {console.log(e,i,a); return e+=1;})) // map gives new array
 
 console.log(a.filter((e)=> e>3))

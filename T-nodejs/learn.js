@@ -1,4 +1,5 @@
-/* 1 nodejs is javascript  open source server runtime environment built on chrome's v8 engine.  nodejs is not lang.,framework,lib, its only a environemt 
+/* nodejs is server side runtime environment for js  
+1 nodejs is javascript  open source server side runtime environment built on chrome's v8 engine.  nodejs is not lang.,framework,lib, its only a environemt 
 earlier we were only using js in browser console through this we can   run nodejs in server
 */
 // 2 repl (read eval print loop) is used to test simple js code to use it write node in terminal(_ for previous result, editor mode)

@@ -10,16 +10,41 @@
 
     HELLO WORLD!!!
 
+
+    <form action="/" onSubmit="submit(event)">
+
+<input type="text" id="text" value="input">
+<input type="submit" value="send">
+
+    </form>
+
  <script src="/socket.io/socket.io.js"></script> 
 
 <script>
 
+
+
+
 const socket = io(); 
 
-  //socket.event("custom-event-name","data to be send")
-  setTimeout(()=>{
-         socket.emit('myCustomEventFromClientSide','A custom message createdfrom client side'); //emit method for commitevent to create it is use to create custom event
-     },3000);
+
+    //     socket.on("tq",(data)=>{
+
+    //         document.body.innerHTML = '';
+    // document.write(d);
+    //     })
+
+        
+
+        const submit  = (event)=>{
+            console.log("hello");
+event.preventDefault();
+
+let d = document.getElementById("text").value;
+console.log(d);
+
+socket.emit("my",d);
+}
 
 
 </script>

@@ -13,15 +13,17 @@ res.write('<body><form action="/message" method = "POST"><input name="message"><
     res.end();
     }
     else if(url === '/message' && method =='POST'){
-        const body = [];
+      //  const body = [];
+      //  console.log(req);
         req.on('data',(chunk)=>{
-            body.push(chunk);
+            //body.push(chunk);
+            res.end(chunk);
         });
-        req.on('end',()=>{
-            const bodyData = Buffer.concat(body).toString();
-            console.log(bodyData);
-            res.end('DONE');
-        });
+        // req.on('end',()=>{
+        //     const bodyData = Buffer.concat(body).toString();
+        //     console.log(bodyData);
+        //     res.end('DONE');
+        // });
 
     }
 

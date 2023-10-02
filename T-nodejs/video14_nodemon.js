@@ -4,3 +4,22 @@
 // global modules must be use carefullly as they can cause effect in other project so download modules  each project separately for every project
 // nodemon is not added in package.json
 // to use it write nodemon {filename} it will automatically run for given file 
+
+
+const a = [];
+console.log(Boolean(a));
+
+
+/*
+
+1 null
+2 undefined
+3 NaN
+4 0
+5 "" // empty string   
+6 false
+
+*/
+
+
+

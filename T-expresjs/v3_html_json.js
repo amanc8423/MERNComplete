@@ -44,26 +44,28 @@ app.get('/temp',(req,res)=>{
         //the methodfs are identical when an object or array is passed but res.json()
         //will also coonvert non-objects such as null and undefined which are not valid json 
          
-        // res.send([
-        //     {
-        //         id :1,
-        //         name:"aman",
-        //           },
-        //           {
-        //             id :2,
-        //             name:"ajay",
-        //               }
-        //  ]);
+        res.send([
+            {
+                id :1,
+                name:"aman",
+                  },
+                  {
+                    id :2,
+                    name:"ajay",
+                      }
+         ]);
 
       
 
-         res.send();
+        // res.send();
 
         });
 
 
 
-app.listen(port);
+app.listen(port,()=>{
+    console.log("server on")
+});
 
 
 

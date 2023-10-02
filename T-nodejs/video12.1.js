@@ -18,7 +18,7 @@ const name = "aman"; // we are not exporting name in case 1
 
 module.exports ={add,sub,name};
 
-// export default mult = (a,b) => {return a-b;}
+//  export default mult = (a,b) => {return a-b;}
 
 
 

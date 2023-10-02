@@ -1,15 +1,15 @@
-// built-in middl
+// built-in middlleware
 
 
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 3050;
  
 // For parsing application/json
 app.use(express.json());
  
 // For parsing application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));  // instead of express we can use bodyparser const bodyparser = require('body-parser');
  
 
 
