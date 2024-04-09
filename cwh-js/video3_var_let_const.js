@@ -2,7 +2,7 @@
 
 // var - reinitialized and redclared, function scope
 // let -  reinitialized but not redclared, block scope
-// const - not reinitialized and not redclared, block scope and it has to be initialized during timeof dec;aration
+// const - not reinitialized and not redclared, block scope and it has to be initialized during time of declaration
 
 var a=5;
 var a = 6;

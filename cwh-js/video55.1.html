@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     check in console
-<script>
+    <script>
 
 
-let p = new Promise((resolve,reject)=>{
-    console.log("promise pending");
+        let p = new Promise((resolve, reject) =>
+        {
+            console.log("promise pending");
 
-    setTimeout(() => {
-        console.log("i am promise and fulfilled");
-       // resolve(true);
-    }, 5000);
-}).then((value)=>console.log(value))
+            setTimeout(() =>
+            {
+                console.log("i am promise and fulfilled");
+                // resolve(true);
+            }, 5000);
+        }).then((value) => console.log(value))
 
 
 
 
-console.log(p);
+        console.log(p);
 
-</script>
+    </script>
 
 
 
 
 
 </body>
+
 </html>
 
 
 <!-- 
-    In JavaScript, a Promise is a clss(doubt- object) that represents a value that may not be available yet, but will be resolved at some point in the future. A Promise object is an instance of the Promise class that has a few methods for working with the asynchronous value it represents.
+    In JavaScript, a Promise is a class(doubt- object) that represents a value that may not be available yet, but will be resolved at some point
+     in the future. A Promise object is an instance of the Promise class that has a few methods for working with the asynchronous value it 
+     represents.
 
-The Promise class is built into JavaScript and is available in most modern web browsers and Node.js environments. To create a new Promise object, you can use the new Promise() constructor, passing in a function that takes two arguments: resolve and reject. The resolve function is called when the asynchronous value is successfully retrieved, while the reject function is called if an error occurs.
+The Promise class is built into JavaScript and is available in most modern web browsers and Node.js environments. To create a new Promise object, 
+you can use the new Promise() constructor, passing in a function that takes two arguments: resolve and reject. The resolve function is called when 
+the asynchronous value is successfully retrieved, while the reject function is called if an error occurs.
 
 Here's an example of creating a new Promise object:
 
@@ -48,20 +57,29 @@ const myPromise = new Promise((resolve, reject) => {
   // do some asynchronous operation, then call either resolve or reject
   // depending on whether the operation was successful or not
 });
-Once you have a Promise object, you can use its methods, such as .then(), .catch(), and .finally(), to work with the resolved value or handle any errors that may occur during the asynchronous operation.
+Once you have a Promise object, you can use its methods, such as .then(), .catch(), and .finally(), to work with the resolved value or handle any 
+errors that may occur during the asynchronous operation.
  -->
 
 
 
- <!-- A Promise object is created by calling the Promise constructor, which takes a single argument, a function called the "executor". The executor function takes two parameters, resolve and reject, which are functions provided by the Promise constructor.
+<!-- A Promise object is created by calling the Promise constructor, which takes a single argument, a function called the "executor". 
+    The executor function takes two parameters, resolve and reject, which are functions provided by the Promise constructor.
 
-When the Promise object is created, the executor function is immediately invoked by the JavaScript runtime. The executor function should perform some asynchronous operation, such as making an HTTP request, reading a file, or setting a timer. When the asynchronous operation completes, it should call either resolve or reject to signal the result of the operation.
+When the Promise object is created, the executor function is immediately invoked by the JavaScript runtime. The executor function should perform 
+some asynchronous operation, such as making an HTTP request, reading a file, or setting a timer. When the asynchronous operation completes, it 
+should call either resolve or reject to signal the result of the operation.
 
-If resolve is called with a value, the Promise is fulfilled with that value. If reject is called with a reason, the Promise is rejected with that reason.
+If resolve is called with a value, the Promise is fulfilled with that value. If reject is called with a reason, the Promise is rejected with that
+ reason.
 
-Once a Promise is either fulfilled or rejected, it transitions to a "settled" state and can no longer be changed. The settled Promise can then be used with the then() method to execute some code when the Promise is fulfilled, or the catch() method to execute some code when the Promise is rejected.
+Once a Promise is either fulfilled or rejected, it transitions to a "settled" state and can no longer be changed. The settled Promise can then be
+ used with the then() method to execute some code when the Promise is fulfilled, or the catch() method to execute some code when the Promise is 
+ rejected.
 
-So to summarize, the Promise method is invoked by calling the Promise constructor, which immediately invokes the executor function provided to it, and the Promise object returned from the constructor is in the pending state until it is either fulfilled or rejected by calling resolve or reject respectively.
+So to summarize, the Promise method is invoked by calling the Promise constructor, which immediately invokes the executor function provided to it,
+ and the Promise object returned from the constructor is in the pending state until it is either fulfilled or rejected by calling resolve or 
+ reject respectively.
 
 
 
@@ -69,8 +87,13 @@ So to summarize, the Promise method is invoked by calling the Promise constructo
 Aman Choudhary
 if i dont write resolve then
 
-If you don't call the resolve function inside the executor function, the Promise will never be resolved and it will remain in the "pending" state indefinitely. This means that any code that is waiting for the Promise to be fulfilled with a value will also be blocked indefinitely, since the Promise never resolves.
+If you don't call the resolve function inside the executor function, the Promise will never be resolved and it will remain in the "pending" state
+ indefinitely. This means that any code that is waiting for the Promise to be fulfilled with a value will also be blocked indefinitely, since the
+  Promise never resolves.
 
-In other words, calling resolve or reject is necessary to signal the completion of an asynchronous operation and provide the result of that operation to any code that is waiting for it.
+In other words, calling resolve or reject is necessary to signal the completion of an asynchronous operation and provide the result of that 
+operation to any code that is waiting for it.
 
-If you don't call resolve or reject, the Promise will eventually time out and throw an UnhandledPromiseRejectionWarning error, indicating that a Promise was rejected but no catch() handler was registered to handle the rejection. To avoid this error, always make sure to handle both the fulfillment and rejection cases of a Promise. -->
+If you don't call resolve or reject, the Promise will eventually time out and throw an UnhandledPromiseRejectionWarning error, indicating that a
+ Promise was rejected but no catch() handler was registered to handle the rejection. To avoid this error, always make sure to handle both the 
+ fulfillment and rejection cases of a Promise. --> 
